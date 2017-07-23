@@ -4,14 +4,14 @@
  * Iterates over item array asynchronously
  * @param {Array} items - The items to loop over
  * @param {function(item: *. index: Number)} cb - The async callback to handle each item
- * @param {Number} [concurrent=5] - How many promises to hold live at a time?
+ * @param {Number} [concurrent=1] - How many promises to hold live at a time?
  * @return {Promise}
  */
 function eachAsync(items, cb, concurrent) {
 
     return new Promise(function (resolve, reject) {
 
-        concurrent = eachAsync.max || 5;
+        concurrent = eachAsync.max || 1;
         let i = 0, len = items.length;
         let running = 0;
         let stop = i >= len, done = false, thrownException = undefined;
@@ -61,6 +61,6 @@ function eachAsync(items, cb, concurrent) {
  * The default value for max concurrent promises
  * @type {number}
  */
-eachAsync.max = 5;
+eachAsync.max = 1;
 
 module.exports = eachAsync;
