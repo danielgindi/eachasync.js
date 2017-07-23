@@ -12,7 +12,7 @@ function eachAsync(items, cb, concurrent) {
 
     return new Promise(function (resolve, reject) {
 
-        concurrent = eachAsync.max || 1;
+        concurrent = concurrent || eachAsync.max || 1;
         let i = 0, len = items.length;
         let running = 0;
         let stop = i >= len, done = false, thrownException = undefined;
