@@ -23,7 +23,7 @@ await eachAsync(files, async function (file, index) {
 
 ```
 
-`eachAsync` will hold by default 5 concurrent promises, instead of creating possibly 10,000s of promises ahead of time.  
+`eachAsync` will hold by default `1` one concurrent promises, instead of creating possibly 10,000s of promises ahead of time.  
 You can control how many promises will be created concurrently, by passing an extra argument or by setting the default.
 
 ```javascript
