@@ -1,6 +1,6 @@
 {
   "name": "eachasync",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Iterate over an array asynchronously (for native await/async/Promise)",
   "main": "src/eachasync.js",
   "scripts": {
