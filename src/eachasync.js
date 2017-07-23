@@ -2,8 +2,9 @@
 
 /**
  * Iterates over item array asynchronously
+ * 
  * @param {Array} items - The items to loop over
- * @param {function(item: *. index: Number)} cb - The async callback to handle each item
+ * @param {function(item: *. index: Number):Promise.<void>} cb - The async callback to handle each item
  * @param {Number} [concurrent=1] - How many promises to hold live at a time?
  * @return {Promise}
  */
@@ -20,7 +21,7 @@ function eachAsync(items, cb, concurrent) {
 
             if (done) {
                 // Should never happen
-                console.warn("Something weird happened: `forAsync` reached a point that it shouldn't have reached. Please review your async code.");
+                console.warn("Something weird happened: `eachAsync` reached a point that it shouldn't have reached. Please review your async code.");
                 return;
             }
 
